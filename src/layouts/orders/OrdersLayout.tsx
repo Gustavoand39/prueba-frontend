@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import LoadingState from "@/components/states/LoadingState";
+import OrdersHeader from "@/layouts/orders/header/OrdersHeader";
 
 interface OrdersLayoutProps {
   children: React.ReactNode;
@@ -7,12 +8,8 @@ interface OrdersLayoutProps {
 
 const OrdersLayout = ({ children }: OrdersLayoutProps) => {
   return (
-    <div className="flex h-screen flex-col">
-      <header className="shadow-sm">
-        <div className="container mx-auto p-4">
-          <h1 className="text-2xl font-semibold">Header</h1>
-        </div>
-      </header>
+    <div className="flex h-screen w-full flex-col">
+      <OrdersHeader />
 
       <main className="flex-1">
         <Suspense fallback={<LoadingState fullScreen />}>{children}</Suspense>
