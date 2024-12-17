@@ -12,7 +12,7 @@ const OrdersLayout = ({ children }: OrdersLayoutProps) => {
       <OrdersHeader />
 
       <main className="flex-1">
-        <Suspense fallback={<LoadingState fullScreen />}>{children}</Suspense>
+        <Suspense fallback={<LoadingState />}>{children}</Suspense>
       </main>
     </div>
   );
