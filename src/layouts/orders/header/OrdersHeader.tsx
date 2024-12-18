@@ -1,6 +1,6 @@
 import { Bell, ChevronLeft } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useLocation } from "react-router-dom";
 
 /**
  * Title View
@@ -17,14 +17,33 @@ const TitleView: Record<string, string> = {
  */
 const OrdersHeader = (): JSX.Element => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Check if the current path is /orders/:id
+  const showBackButton = /\/orders\/\d+/.test(location.pathname);
+
+  /**
+   * Handle Back Click
+   * @returns {void} Void
+   */
+  const handleBackClick = (): void => {
+    navigate(-1);
+  };
 
   return (
     <header>
       <div className="container mx-auto flex items-center justify-between px-4 py-6">
         <div>
-          <Button variant="ghost" size="icon">
-            <ChevronLeft size={24} />
-          </Button>
+          {showBackButton && (
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Go back"
+              onClick={handleBackClick}
+            >
+              <ChevronLeft size={24} />
+            </Button>
+          )}
         </div>
 
         <div>
@@ -34,7 +53,7 @@ const OrdersHeader = (): JSX.Element => {
         </div>
 
         <div>
-          <Button variant="ghost" size="icon">
+          <Button aria-label="Notifications" variant="ghost" size="icon">
             <Bell className="text-custom-primary" size={24} />
           </Button>
         </div>
