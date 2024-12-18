@@ -1,11 +1,18 @@
 import { Package, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
+
+interface OrderCardFooterProps {
+  orderId: string;
+}
 
 /**
  * Shows the footer of the order card.
  * Contains the pickup and details buttons.
+ * @param {OrderCardFooterProps} props - Order Card Footer Props
+ * @property {string} props.orderId - Order ID
  * @returns {JSX.Element} Order Card Footer Component
  */
-const OrderCardFooter = (): JSX.Element => {
+const OrderCardFooter = ({ orderId }: OrderCardFooterProps): JSX.Element => {
   /**
    * Handles the click event of the pickup button.
    * Only logs a message for now.
@@ -13,15 +20,6 @@ const OrderCardFooter = (): JSX.Element => {
    */
   const handlePickupClick = (): void => {
     console.log("Navegar");
-  };
-
-  /**
-   * Handles the click event of the details button.
-   * Navigates to the details page.
-   * @returns {void}
-   */
-  const handleDetailsClick = (): void => {
-    console.log("Detalles");
   };
 
   return (
@@ -34,13 +32,12 @@ const OrderCardFooter = (): JSX.Element => {
         Pickup
       </button>
 
-      <button
-        className="custom-btn custom-btn-right"
-        onClick={handleDetailsClick}
-      >
-        Details
-        <FileText size={24} />
-      </button>
+      <Link to={`/orders/${orderId}`}>
+        <button className="custom-btn custom-btn-right">
+          Details
+          <FileText size={24} />
+        </button>
+      </Link>
     </footer>
   );
 };

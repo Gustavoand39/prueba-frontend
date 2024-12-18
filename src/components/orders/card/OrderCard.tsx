@@ -14,7 +14,7 @@ interface OrderCardProps {
  * @returns {JSX.Element} Order Card Component
  */
 const OrderCard = ({ order }: OrderCardProps): JSX.Element => {
-  const { order_number, type, status_string, destinations, status_class } =
+  const { _id, order_number, type, status_string, destinations, status_class } =
     order;
 
   return (
@@ -39,7 +39,7 @@ const OrderCard = ({ order }: OrderCardProps): JSX.Element => {
         <OrderCardContent destinations={destinations} />
 
         {/* Footer */}
-        <OrderCardFooter />
+        <OrderCardFooter orderId={_id} />
       </section>
     </div>
   );
