@@ -1,7 +1,13 @@
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import { UpcomingOrdersView } from "@/views/orders";
+// Lazy-loaded views
+const UpcomingOrdersView = lazy(
+  () => import("@/views/orders/UpcomingOrdersView"),
+);
+const DetailsOrderView = lazy(() => import("@/views/orders/DetailsOrderView"));
+
+// Components
 import LoadingState from "@/components/states/LoadingState";
 import OrdersLayout from "@/layouts/orders/OrdersLayout";
 
@@ -9,11 +15,14 @@ const AuthRoutes: React.FC = () => (
   <Suspense fallback={<LoadingState fullScreen />}>
     <OrdersLayout>
       <Routes>
-        <Route path="/" element={<Navigate to="/sign-in" />} />
+        {/* Redirect to /upcoming if route is the root */}
+        <Route path="/" element={<Navigate to="/upcoming" />} />
 
         <Route path="/upcoming" element={<UpcomingOrdersView />} />
+        <Route path="/:id" element={<DetailsOrderView />} />
 
-        <Route path="*" element={<Navigate to="/sign-in" />} />
+        {/* Redirect to /upcoming if route does not exist */}
+        <Route path="*" element={<Navigate to="/upcoming" />} />
       </Routes>
     </OrdersLayout>
   </Suspense>
