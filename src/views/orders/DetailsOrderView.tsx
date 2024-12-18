@@ -26,7 +26,7 @@ const DetailsOrderView = () => {
   }
 
   return (
-    <div className="h-full p-6">
+    <div className="h-full px-6 py-12">
       <div className="mx-auto flex max-w-3xl flex-col gap-8">
         {/* Card with destinations */}
         <DestinationCard

@@ -21,7 +21,7 @@ const OrderTimeline = ({ status, driverName }: OrderTimelineProps) => {
   ];
 
   return (
-    <div className="relative flex flex-col gap-4">
+    <div className="relative flex flex-col gap-4 p-6">
       {steps.map(({ isChecked, label, isLast }, index) => (
         <div key={index} className="flex items-center gap-4">
           {/* Icon and Line */}

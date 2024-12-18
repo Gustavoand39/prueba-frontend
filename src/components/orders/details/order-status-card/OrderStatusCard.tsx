@@ -1,3 +1,4 @@
+import OrderStatusFooterCard from "./OrderStatusFooterCard";
 import OrderTimeline from "./OrderTimeline";
 
 interface OrderStatusCardProps {
@@ -10,8 +11,10 @@ interface OrderStatusCardProps {
 
 const OrderStatusCard = ({ orderStatus, driver }: OrderStatusCardProps) => {
   return (
-    <div className="flex flex-col gap-4 rounded-3xl border-2 p-6">
+    <div className="flex flex-col gap-4 rounded-3xl border-2">
       <OrderTimeline status={orderStatus} driverName={driver.nickname} />
+
+      <OrderStatusFooterCard isActive={orderStatus >= 3} />
     </div>
   );
 };
