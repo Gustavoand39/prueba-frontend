@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
  */
 const TitleView: Record<string, string> = {
   "/orders/upcoming": "Upcoming Orders",
+  "/orders/:id": "Order Details",
 };
 
 /**
@@ -20,7 +21,16 @@ const OrdersHeader = (): JSX.Element => {
   const navigate = useNavigate();
 
   // Check if the current path is /orders/:id
-  const showBackButton = /\/orders\/\d+/.test(location.pathname);
+  const isOrderDetailsPath = /\/orders\/\d+/.test(location.pathname);
+
+  /**
+   * Get Title
+   * @returns {string} Title
+   */
+  const getTitle = (): string => {
+    if (isOrderDetailsPath) return "Order Details";
+    return TitleView[location.pathname] ?? "Orders";
+  };
 
   /**
    * Handle Back Click
@@ -34,7 +44,7 @@ const OrdersHeader = (): JSX.Element => {
     <header>
       <div className="container mx-auto flex items-center justify-between px-4 py-6">
         <div>
-          {showBackButton && (
+          {isOrderDetailsPath && (
             <Button
               variant="ghost"
               size="icon"
@@ -47,9 +57,7 @@ const OrdersHeader = (): JSX.Element => {
         </div>
 
         <div>
-          <h1 className="text-xl font-semibold">
-            {TitleView[location.pathname] ?? "Orders"}
-          </h1>
+          <h1 className="text-xl font-semibold">{getTitle()}</h1>
         </div>
 
         <div>
