@@ -112,3 +112,19 @@ html {
   @apply antialiased;
   font-family: "Open Sans", sans-serif;
 }
+
+.custom-btn {
+  @apply bg-custom-primary px-6 py-4 font-bold text-black;
+}
+
+.custom-btn:hover {
+  @apply bg-custom-primary-light;
+}
+
+.custom-btn-left {
+  border-radius: 0 1.4rem 1.4rem 1.4rem;
+}
+
+.custom-btn-right {
+  border-radius: 1.4rem 0 1.4rem 1.4rem;
+}
