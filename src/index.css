@@ -114,7 +114,7 @@ html {
 }
 
 .custom-btn {
-  @apply bg-custom-primary px-6 py-4 font-bold text-black;
+  @apply bg-custom-primary flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-bold text-black md:text-base;
 }
 
 .custom-btn:hover {
