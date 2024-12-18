@@ -114,7 +114,7 @@ html {
 }
 
 .custom-btn {
-  @apply bg-custom-primary flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-bold text-black md:text-base;
+  @apply flex items-center justify-center gap-2.5 bg-custom-primary px-8 py-4 text-sm font-bold text-black md:text-base;
 }
 
 .custom-btn:hover {
@@ -127,4 +127,35 @@ html {
 
 .custom-btn-right {
   border-radius: 1.4rem 0 1.4rem 1.4rem;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem;
+  color: #8c8f8f;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.nav-link-active {
+  color: #f3f4f6;
+}
+
+.nav-link-active::after {
+  background-color: #ffed00; /* border-custom-primary */
+  transform: scaleX(1);
 }

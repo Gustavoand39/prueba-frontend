@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+
+import OrderFilter from "@/components/orders/OrderFilter";
 import OrderCard from "@/components/orders/card/OrderCard";
 import OrderCardSkeleton from "@/components/skeletons/OrderCardSkeleton";
 import { getUpcomingOrdersService } from "@/services/orders/getUpcomingOrders";
@@ -38,6 +40,8 @@ const UpcomingOrdersView = () => {
 
   return (
     <div className="container mx-auto p-6">
+      <OrderFilter />
+
       {orders.length > 0 ? (
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 2xl:grid-cols-3">
           {orders.map((order) => (
