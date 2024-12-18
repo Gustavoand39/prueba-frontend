@@ -24,7 +24,7 @@ const OrderCard = ({ order }: OrderCardProps): JSX.Element => {
         <span>#{order_number}</span>
       </h2>
 
-      <section className="rounded-3xl border-2 border-neutral-600">
+      <section className="rounded-3xl border-2">
         {/* Header */}
         <OrderCardHeader
           type={type}
@@ -33,7 +33,7 @@ const OrderCard = ({ order }: OrderCardProps): JSX.Element => {
         />
 
         {/* Divider */}
-        <hr className="border border-neutral-600" />
+        <hr className="border" />
 
         {/* Content */}
         <OrderCardContent destinations={destinations} />
