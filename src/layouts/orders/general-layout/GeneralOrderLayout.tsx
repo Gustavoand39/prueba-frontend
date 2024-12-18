@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import LoadingState from "@/components/states/LoadingState";
-import OrdersHeader from "@/layouts/orders/header/OrdersHeader";
+import GeneralHeaderLayout from "@/layouts/orders/general-layout/GeneralHeaderLayout";
 import { Outlet } from "react-router-dom";
 
-const OrdersLayout = () => {
+const GeneralOrderLayout = () => {
   return (
     <div className="flex h-screen w-full flex-col">
-      <OrdersHeader />
+      <GeneralHeaderLayout />
 
       <main className="flex-1">
         <Suspense fallback={<LoadingState />}>
@@ -17,4 +17,4 @@ const OrdersLayout = () => {
   );
 };
 
-export default OrdersLayout;
+export default GeneralOrderLayout;

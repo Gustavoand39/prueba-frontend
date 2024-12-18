@@ -9,7 +9,7 @@ const DetailsOrderView = lazy(() => import("@/views/orders/DetailsOrderView"));
 
 // Components
 import LoadingState from "@/components/states/LoadingState";
-import OrdersLayout from "@/layouts/orders/OrdersLayout";
+import GeneralOrderLayout from "@/layouts/orders/general-layout/GeneralOrderLayout";
 
 const AppRouter = () => {
   return (
@@ -20,7 +20,7 @@ const AppRouter = () => {
           <Route path="/" element={<Navigate to="/orders/upcoming" />} />
 
           {/* Orders routes */}
-          <Route path="/orders/*" element={<OrdersLayout />}>
+          <Route path="/orders/*" element={<GeneralOrderLayout />}>
             <Route>
               <Route path="upcoming" element={<UpcomingOrdersView />} />
             </Route>

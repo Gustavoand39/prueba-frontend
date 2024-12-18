@@ -12,11 +12,11 @@ const TitleView: Record<string, string> = {
 };
 
 /**
- * Orders Header Component
+ * General Header Layout
  * Contains the header for the Orders Layout
- * @returns {JSX.Element} Orders Header Component
+ * @returns {JSX.Element} JSX.Element
  */
-const OrdersHeader = (): JSX.Element => {
+const GeneralHeaderLayout = (): JSX.Element => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -70,4 +70,4 @@ const OrdersHeader = (): JSX.Element => {
   );
 };
 
-export default OrdersHeader;
+export default GeneralHeaderLayout;
