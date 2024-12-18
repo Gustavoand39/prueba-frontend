@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import { Check } from "lucide-react";
+import { OrderStatus } from "@/types/models.types";
 
 interface OrderTimelineProps {
-  status: 0 | 1 | 2 | 3;
+  status: OrderStatus;
   driverName: string;
 }
 

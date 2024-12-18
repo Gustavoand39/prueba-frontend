@@ -1,8 +1,9 @@
 import OrderStatusFooterCard from "./OrderStatusFooterCard";
 import OrderTimeline from "./OrderTimeline";
+import { OrderStatus } from "@/types/models.types";
 
 interface OrderStatusCardProps {
-  orderStatus: 0 | 1 | 2 | 3;
+  orderStatus: OrderStatus;
   driver: {
     nickname: string;
     thumbnail?: string;

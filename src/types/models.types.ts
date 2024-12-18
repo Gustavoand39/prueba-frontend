@@ -1,4 +1,12 @@
+/**
+ * Cargo type
+ */
 export type Nickname = "Recolección" | "Entrega";
+
+/**
+ * Order status
+ */
+export type OrderStatus = 1 | 2 | 3 | 4;
 
 /**
  * Destination object
@@ -16,7 +24,7 @@ export interface Destination {
  */
 export interface Order {
   _id: string;
-  status: number;
+  status: OrderStatus;
   order_number: string;
   manager: string;
   driver: string;
@@ -48,7 +56,7 @@ export interface Orders {
   _id: string;
   stamp: boolean;
   reference_number: string;
-  status: 0 | 1 | 2 | 3;
+  status: OrderStatus;
   completion_percentage: number;
   cargo: Cargo;
   user_id: string;
