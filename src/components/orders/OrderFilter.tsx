@@ -10,7 +10,7 @@ const NavLinks = [
 
 const OrderFilter = () => {
   return (
-    <div className="container mx-auto mb-8 flex flex-col items-center justify-between gap-6 p-6 md:flex-row">
+    <div className="container mx-auto mb-8 flex flex-col items-center justify-between gap-6 md:flex-row">
       <nav>
         <ul className="flex gap-6">
           {NavLinks.map(({ name, path }, index) => (
