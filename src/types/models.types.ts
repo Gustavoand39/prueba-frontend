@@ -1,3 +1,5 @@
+export type Nickname = "Recolección" | "Entrega";
+
 /**
  * Destination object
  */
@@ -5,7 +7,7 @@ export interface Destination {
   address: string;
   start_date: number;
   end_date: number;
-  nickname: string;
+  nickname: Nickname;
   show_navigation: boolean;
 }
 
