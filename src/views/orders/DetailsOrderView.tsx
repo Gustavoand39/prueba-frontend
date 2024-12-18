@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import LoadingState from "@/components/states/LoadingState";
 import DestinationCard from "@/components/orders/details/destination-card/DestinationCard";
+import OrderStatusCard from "@/components/orders/details/order-status-card/OrderStatusCard";
 import { getOrdersService } from "@/services/orders/getOrders";
 import { Orders } from "@/types/models.types";
 
@@ -25,12 +26,22 @@ const DetailsOrderView = () => {
   }
 
   return (
-    <div className="h-full">
-      <div className="mx-auto max-w-3xl p-6">
+    <div className="h-full p-6">
+      <div className="mx-auto flex max-w-3xl flex-col gap-8">
+        {/* Card with destinations */}
         <DestinationCard
           orderNumber={order.order_number}
           referenceNumber={order.reference_number}
           destinations={order.destinations}
+        />
+
+        {/* Card with order status */}
+        <OrderStatusCard
+          orderStatus={order.status}
+          driver={{
+            nickname: order.driver.nickname,
+            thumbnail: order.driver.thumbnail,
+          }}
         />
       </div>
     </div>

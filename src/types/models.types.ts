@@ -48,7 +48,7 @@ export interface Orders {
   _id: string;
   stamp: boolean;
   reference_number: string;
-  status: number;
+  status: 0 | 1 | 2 | 3;
   completion_percentage: number;
   cargo: Cargo;
   user_id: string;
