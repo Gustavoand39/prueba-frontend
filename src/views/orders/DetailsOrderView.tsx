@@ -25,8 +25,6 @@ const DetailsOrderView = () => {
     return <LoadingState />;
   }
 
-  console.log(order);
-
   return (
     <div className="h-full px-6 py-12">
       <div className="mx-auto flex max-w-3xl flex-col gap-8">
