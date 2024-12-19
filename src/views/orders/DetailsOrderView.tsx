@@ -25,6 +25,8 @@ const DetailsOrderView = () => {
     return <LoadingState />;
   }
 
+  console.log(order);
+
   return (
     <div className="h-full px-6 py-12">
       <div className="mx-auto flex max-w-3xl flex-col gap-8">
@@ -38,6 +40,7 @@ const DetailsOrderView = () => {
         {/* Card with order status */}
         <OrderStatusCard
           orderStatus={order.status}
+          endDate={order.end_date}
           driver={{
             nickname: order.driver.nickname,
             thumbnail: order.driver.thumbnail,
