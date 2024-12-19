@@ -16,7 +16,7 @@ const OrderCardContent = ({
   destinations,
 }: OrderCardContentProps): JSX.Element => {
   return (
-    <div className="flex flex-col gap-4 px-6 py-8">
+    <div className="relative flex flex-col gap-4 px-6 py-8">
       {destinations.map(({ address, end_date, nickname, start_date }) => {
         // Get the city from the address
         const addressParts = address.split(",");
@@ -63,6 +63,8 @@ const OrderCardContent = ({
           </div>
         );
       })}
+
+      <div className="absolute left-[35px] top-20 h-10 w-0.5 bg-gradient-to-b from-white via-neutral-600 to-neutral-950" />
     </div>
   );
 };
