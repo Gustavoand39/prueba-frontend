@@ -26,7 +26,7 @@ const FilterOrderLayout = () => {
   }, [setIsLoading, setOrders]);
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col px-6">
       <OrderFilter />
 
       <div className="flex-1">

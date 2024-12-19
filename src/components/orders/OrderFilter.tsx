@@ -18,9 +18,14 @@ const OrderFilter = () => {
               <NavLink
                 to={path}
                 className={({ isActive }) =>
-                  clsx("nav-link", {
-                    "nav-link-active": isActive,
-                  })
+                  clsx(
+                    "block rounded border-b-2 p-1 text-center text-sm hover:border-custom-primary md:p-2 md:text-base",
+                    "transition-colors duration-200",
+                    {
+                      "border-custom-primary text-neutral-100": isActive,
+                      "border-transparent text-gray-400": !isActive,
+                    },
+                  )
                 }
               >
                 {name}

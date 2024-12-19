@@ -20,7 +20,7 @@ const UpcomingOrdersView = () => {
   }
 
   return (
-    <div className="container mx-auto pb-12">
+    <div className="container mx-auto px-6 pb-12">
       {orders.length > 0 ? (
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 2xl:grid-cols-3">
           {orders.map((order) => (
