@@ -14,8 +14,15 @@ interface OrderCardProps {
  * @returns {JSX.Element} Order Card Component
  */
 const OrderCard = ({ order }: OrderCardProps): JSX.Element => {
-  const { _id, order_number, type, status_string, destinations, status_class } =
-    order;
+  const {
+    _id,
+    order_number,
+    type,
+    status_string,
+    destinations,
+    status_class,
+    start_date,
+  } = order;
 
   return (
     <div className="flex flex-col gap-4">
@@ -39,7 +46,7 @@ const OrderCard = ({ order }: OrderCardProps): JSX.Element => {
         <OrderCardContent destinations={destinations} />
 
         {/* Footer */}
-        <OrderCardFooter orderId={_id} />
+        <OrderCardFooter orderId={_id} startDate={start_date} />
       </section>
     </div>
   );
