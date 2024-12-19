@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 // Lazy-loaded views
@@ -14,7 +14,7 @@ import FilterOrderLayout from "@/layouts/orders/filter-layout/FilterOrderLayout"
 
 const AppRouter = () => {
   return (
-    <BrowserRouter basename="/">
+    <HashRouter>
       <Suspense fallback={<LoadingState fullScreen />}>
         <Routes>
           {/* Redirect root to orders/upcoming */}
@@ -36,7 +36,7 @@ const AppRouter = () => {
           <Route path="*" element={<Navigate to="/orders/upcoming" />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
